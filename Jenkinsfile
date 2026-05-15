@@ -8,7 +8,7 @@ pipeline {
                     -v ${WORKSPACE}:/app \
                     -w /app \
                     python:3.12 \
-                    bash -c "pip install --no-cache-dir -r requirements.txt && python test.py"
+                    sh -c "pip install --no-cache-dir -r requirements.txt && python test.py"
                 """
             }
         }
