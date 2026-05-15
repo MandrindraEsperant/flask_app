@@ -3,8 +3,13 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh "ls -la ${WORKSPACE}"
-                sh "docker run --rm -u 0:0 -v ${WORKSPACE}:/app -w /app python:3.12 bash -c 'pip install --no-cache-dir -r requirements.txt && python test.py'"
+                sh """
+                    docker run --rm -u 0:0 \
+                    -v ${WORKSPACE}:/app \
+                    -w /app \
+                    python:3.12 \
+                    bash -c "pip install --no-cache-dir -r requirements.txt && python test.py"
+                """
             }
         }
         stage('Build image') {
