@@ -1,0 +1,45 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Flask / Python logs
+*.log
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# PyCharm / IntelliJ
+.idea/
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Environment variables
+.env
+
+# Testing
+.pytest_cache/
+.coverage
+
+# Flask instance folder (if used)
+instance/
+
+# SQLite database (if you use it later)
+*.sqlite3
+*.db
