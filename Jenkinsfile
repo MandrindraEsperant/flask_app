@@ -3,12 +3,20 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh """
+               sh """
                     docker run --rm -u 0:0 \
                     -v ${WORKSPACE}:/app \
                     -w /app \
                     python:3.12 \
-                    sh -c "pip install --no-cache-dir -r requirements.txt && python test.py"
+                    pip install --no-cache-dir -r requirements.txt
+                    """
+
+                    sh """
+                    docker run --rm -u 0:0 \
+                    -v ${WORKSPACE}:/app \
+                    -w /app \
+                    python:3.12 \
+                    python test.py
                 """
             }
         }
