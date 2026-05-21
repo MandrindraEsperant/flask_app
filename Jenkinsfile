@@ -2,15 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('Setup') {
-            steps {
-                sh '''
-                    # Installer Python dans le conteneur Jenkins
-                    apt-get update
-                    apt-get install -y python3 python3-pip python3-venv git
-                '''
-            }
-        }
         
         stage('Checkout') {
             steps {
